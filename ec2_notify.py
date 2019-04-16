@@ -74,20 +74,20 @@ class EC2Notify(Hook):
 
         if 'public_ip' in ec2_info:
             message = message + ("<b> Resource Connection Info </b> <br />"
-                                 "If you provisioned an EC2 instance: "
+                                 "If you provisioned an EC2 linux instance: <br />"
                                  "Open a terminal, then type ssh YOUR_JUMPCLOUD_USERNAME@IP_ADDRESS "
                                  "(i.e. ssh jsmith@" + ec2_info["public_ip"] + ") <br />"
-                                 "If you provisioned a Windows EC2: "
+                                 "If you provisioned a Windows EC2: <br />"
                                  "Run a "
                                  "<a href=\"https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-clients\">RDP client</a> "
                                  "then connect to " + ec2_info["public_ip"] + " with your Jumpcloud credentials")
         else:
             message = message + ("<b> Resource Connection Info </b> <br />"
                                  "Login to the Sage VPN <br />"
-                                 "If you provisioned an EC2 instance: "
+                                 "If you provisioned an EC2 linux instance: <br />"
                                  "Open a terminal, then type ssh YOUR_JUMPCLOUD_USERNAME@IP_ADDRESS "
                                  "(i.e. ssh jsmith@" + ec2_info["private_ip"] + ") <br />"
-                                 "If you provisioned a Windows EC2: "
+                                 "If you provisioned a Windows EC2: <br />"
                                  "Run a "
                                  "<a href=\"https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-clients\">RDP client</a> "
                                  "then connect to " + ec2_info["private_ip"] + " with your Jumpcloud credentials")
